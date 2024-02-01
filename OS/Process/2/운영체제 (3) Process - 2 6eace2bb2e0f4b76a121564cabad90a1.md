@@ -14,9 +14,9 @@
 - 다중 스레드로 구성된 태스크 구조에서는 하나의 서버 스레드가 blocked(waiting)상태인 동안에도 동일한 태스크 내의 다른 스레드가 실행(running)되어 빠른 처리를 할 수 있다
 - 스레드를 사용하면 병렬성을 높일 수 있다.
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(3)%20Process%20-%202%206eace2bb2e0f4b76a121564cabad90a1/Untitled.png)
+![Untitled](images/Untitled.png)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(3)%20Process%20-%202%206eace2bb2e0f4b76a121564cabad90a1/Untitled%201.png)
+![Untitled](images/Untitled%201.png)
 
 ### Thread의 장점
 

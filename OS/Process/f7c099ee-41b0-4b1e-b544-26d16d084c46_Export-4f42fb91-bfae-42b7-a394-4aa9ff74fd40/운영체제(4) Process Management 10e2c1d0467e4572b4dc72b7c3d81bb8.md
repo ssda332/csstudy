@@ -37,23 +37,23 @@
 
 ### fork() 시스템 콜
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(4)%20Process%20Management%2010e2c1d0467e4572b4dc72b7c3d81bb8/Untitled.png)
+![Untitled](images/Untitled.png)
 
 - fork() 시스템 콜로 부모 프로세스가 자식 프로세스를 만들면 PCB(프로세스 정보)도 그대로 복제된다. 따라서 자식 프로세스는 fork()를 다시 수행하지 않고 부모 프로세스가 진행했던 코드 다음 코드부터 수행하게 된다.
 - fork() 리턴 밸류도 부모와 자식이 다르다. 따라서 각각 다른 동작을 수행하도록 할 수 있다.
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(4)%20Process%20Management%2010e2c1d0467e4572b4dc72b7c3d81bb8/Untitled%201.png)
+![Untitled](images/Untitled%201.png)
 
 - exec()은 이전 기억은 잊어버리고 새롭게 덮어씌워줌.
 - exec 이후의 코드는 실행하지 않음
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(4)%20Process%20Management%2010e2c1d0467e4572b4dc72b7c3d81bb8/Untitled%202.png)
+![Untitled](images/Untitled%202.png)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(4)%20Process%20Management%2010e2c1d0467e4572b4dc72b7c3d81bb8/Untitled%203.png)
+![Untitled](images/Untitled%203.png)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(4)%20Process%20Management%2010e2c1d0467e4572b4dc72b7c3d81bb8/Untitled%204.png)
+![Untitled](images/Untitled%204.png)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(4)%20Process%20Management%2010e2c1d0467e4572b4dc72b7c3d81bb8/Untitled%205.png)
+![Untitled](images/Untitled%205.png)
 
 ---
 

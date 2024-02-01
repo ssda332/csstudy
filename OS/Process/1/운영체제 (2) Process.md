@@ -6,7 +6,7 @@
 프로세스는 **실행중인 프로그램이다.**
 > 
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled.png)
+![Untitled](images/Untitled.png)
 
 - 프로세스의 문맥(context)
     - 프로그램의 흐름에서 어떤 특정 지점을 잡았을때 해당 지점까지 어떤 동작이 일어났는지 나타내는 것 (CPU 수행 **상태**를 나타내는 하드웨어 문맥)
@@ -20,9 +20,9 @@
         - PCB (Process Control Block)
         - Kernel stack - 커널에서 함수 호출이 이루어질 때(ex. 어떠한 프로세스가 System call을 함) 어떠한 프로세스가 요청했는지에 대한 정보를 stack 영역에 해당 프로세스의 커널 스택을 쌓음
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled%201.png)
+![Untitled](images/Untitled%201.png)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled%202.png)
+![Untitled](images/Untitled%202.png)
 
 - 프로세스의 상태 (Process State) - 프로세스는 상태(state)가 변경되며 수행된다
     - Running
@@ -46,12 +46,12 @@
 Suspended: 외부에서 resume해 주어야 Active
 > 
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled%203.png)
+![Untitled](images/Untitled%203.png)
 
 - 줄을 세워서 모든 자원들이 최대한 놀지 않게 하는 것이 필요
 - **Queue는 운영체제 kernel이 본인의 Data 영역에 자료구조 Queue를 만들어놓고 프로세스의 상태를 바꿔가면서 운영을 함**
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled%204.png)
+![Untitled](images/Untitled%204.png)
 
 - Process Control Block (PCB) - 운영체제(커널)가 각 프로세스를 관리하기 위해 본인의 data영역에 저장하는 프로세스의 정보
 - 구성요소
@@ -68,27 +68,27 @@ Suspended: 외부에서 resume해 주어야 Active
         - Open file descriptors
         - 어떤 파일을 열어놓았는지
         
-        ![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled%205.png)
+        ![Untitled](images/Untitled%205.png)
         
 - 문맥 교환 (Context Switch) - CPU를 한 프로세스에서 다른 프로세스로 넘겨주는 과정 → 문맥 교환 시에 어느 문맥까지 진행되었는지 여부를 저장하는 과정이 필요함
 - CPU를 내어주는 프로세스의 상태를 운영체제의 data에 있는 해당 프로세스의 PCB에 저장하고 넘겨줌
 - 다시 프로세스가 CPU를 받아 수행될 때, PCB에 저장되있던 상태부터 수행
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled%206.png)
+![Untitled](images/Untitled%206.png)
 
 ### 문맥 교환시 헷갈리는 내용
 
 - 문맥 교환은 CPU 제어권이 프로세스 → 프로세스로 넘어가는 것을 뜻한다. System call이나 Interrupt가 발생해서 사용자 프로세스 → 운영체제로 넘어갔을 때는 문맥교환이라고 부르지 않는다. (사용자 프로세스 A → 운영체제 → 사용자 프로세스 B 일 경우는 문맥교환이라고 침)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled%207.png)
+![Untitled](images/Untitled%207.png)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled%208.png)
+![Untitled](images/Untitled%208.png)
 
 위에 첫줄이 Ready Queue이고 그 밑으로 Device Queue들이 있다
 
 PCB의 pointer 영역이 큐 안에서 다음 프로세스를 가리킨다
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6%20(2)%20Process%2024f2482e7f624142896d8a845f50133a/Untitled%209.png)
+![Untitled](images/Untitled%209.png)
 
 - 스케줄러 (Scheduler)
     - Short-term scheduler (단기 스케줄러 or CPU scheduler)
