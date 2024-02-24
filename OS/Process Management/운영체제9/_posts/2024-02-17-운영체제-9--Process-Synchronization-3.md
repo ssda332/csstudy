@@ -11,7 +11,7 @@ last_modified_at: 2024-02-17 23:30:02 +0000
 
 ### Bounded-Buffer Problem (Producer-Consumer Problem)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled.png)
 
 - 버퍼의 크기가 유한한 환경에서의 생산자-소비자 문제이다.
 - 위의 그림과 같이 공유데이터에 Lock을 걸고 buffer 조작 후 락을 풀고 buffer 수를 증가시킨다.
@@ -24,7 +24,7 @@ last_modified_at: 2024-02-17 23:30:02 +0000
         - full/empty 버퍼의 수를 표시하는 세마포어로 모든 Instruction이 끝날 때 각각의 버퍼를 증가시켜야함
         
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%201.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%201.png)
 
 - 세마포어 변수는 3개가 필요
     - lock을 해주는 mutex 변수
@@ -47,13 +47,13 @@ last_modified_at: 2024-02-17 23:30:02 +0000
 
 ### Readers-Writers Problem
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%202.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%202.png)
 
 - 프로세스로는 읽는 프로세서와 쓰는 프로세스가 있고 공유데이터로 DB가 있다.
 - 위의 Bounded-Buffer 문제에서와 다르게 write는 동시에 하면 안되지만 read는 동시에 해도 됨
 - Writer는 항상 아무도 없을때(배타적, 독점적)으로 수행되어야 함
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%203.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%203.png)
 
 - small db는 DB에 lock를 걸어주는 세마포어
 - reader도 쉽게 구현하려면 writer랑 똑같이 해주면 됨. 하지만 비효율적(읽는 작업이 동시에 이루어지지 못함)
@@ -66,7 +66,7 @@ last_modified_at: 2024-02-17 23:30:02 +0000
 
 ### Dining-Philosophers Problem
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%204.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%204.png)
 
 - 밥을 먹으려면 왼쪽 오른쪽 젓가락을 잡아야함
 - 젓가락은 1로 초기화 되어있기 때문에 양옆의 사람중 한명이 젓가락을 잡아서 식사를 할경우 해당 사람은 식사를 할 수 없다.
@@ -79,7 +79,7 @@ last_modified_at: 2024-02-17 23:30:02 +0000
 - 비대칭
     - 짝수(홀수)철학자는 왼쪽(오른쪽) 젓가락부터 잡도록
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%205.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%205.png)
 
 - i = 5명의 철학자 번호
 - semaphore 변수 self, mutex(lock)
@@ -98,12 +98,12 @@ last_modified_at: 2024-02-17 23:30:02 +0000
     6. eating 상태에서 초기 상태인 thinking 상태로 되돌아온다.
     
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%206.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%206.png)
 
 - 세마포어는 P연산과 V연산을 통해 프로그래머에게 코딩을 비교적 쉽게 만들어주긴 했으나 그럼에도 불구하고 문제가 생겼을 때 버그를 잡기가 쉽지 않음.
 - Monitor : 동시 수행중인 프로세스 사이에서 abstract data type의 안전한 공유를 보장하기 위한 high-level synchronization construct
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%207.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%207.png)
 
 모니터는 프로그래밍 언어 차원에서 **공유 데이터에 접근하는 문제를 자동으로 해결해주면서 프로그래머에게 부담을** 줄여준다.
 
@@ -113,9 +113,9 @@ last_modified_at: 2024-02-17 23:30:02 +0000
 
 **요약하면 모니터에서는 lock을 걸고 풀고 하는게 원칙적으로 필요하지 않고 모니터가 알아서 제어해준다는 것이다.**
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%208.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%208.png)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%209.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%209.png)
 
 - **wait()**
 - 어떤 프로세스가 특정 조건을 만족하지 않아서 작업이 오래 기다려야 할 때, 해당 프로세스를 잠들게 하기 위해 호출하는 것.
@@ -125,7 +125,7 @@ last_modified_at: 2024-02-17 23:30:02 +0000
     해
     
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%2010.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%2010.png)
 
 기존 세마포어 방식에선 공유 버퍼에 접근할 때, 생산자든 소비자든 lock을 걸어 다른 생산자나 소비자가 접근하지 못하도록 했지만, 모니터에서는 그러한 코드가 필요없음.
 
@@ -133,6 +133,6 @@ last_modified_at: 2024-02-17 23:30:02 +0000
     - full : 내용이 들어있는 버퍼를 기다리는 프로세스를 줄세워 놓는곳
     - empty : 빈 버퍼를 기다리는 프로세스를 줄세워 놓는곳
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(9)%20Process%20Synchronization%203%203cd9cfdc15d74c9ba3049a26d80841ed/Untitled%2011.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C9/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-9--Process-Synchronization-3/Untitled%2011.png)
 
 [🔒 Java 로 동기화를 해보자! (techcourse.co.kr)](https://tecoble.techcourse.co.kr/post/2021-10-23-java-synchronize/)

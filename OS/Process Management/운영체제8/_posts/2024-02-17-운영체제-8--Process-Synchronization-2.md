@@ -9,7 +9,7 @@ last_modified_at: 2024-02-17 23:31:32 +0000
 
 ## Algorithm 1
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(8)%20Process%20Synchronization%202%209eef305c46aa40598abe62e1c43149df/Untitled.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C8/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-8--Process-Synchronization-2/Untitled.png)
 
 - turn : critical section에 들어갈 변수가 누구인지 알려주는 변수 (0이면 0번 프로세스 차례)
 - 자기 차례가 아닐경우 while문을 무한반복 하면서 자기차례를 기다림
@@ -21,7 +21,7 @@ last_modified_at: 2024-02-17 23:31:32 +0000
 
 ## Algorithm 2
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(8)%20Process%20Synchronization%202%209eef305c46aa40598abe62e1c43149df/Untitled%201.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C8/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-8--Process-Synchronization-2/Untitled%201.png)
 
 - critical section에 들어가기 전에 본인 flag(flag[i])를 true로 함
 - 상대방 flag 체크하고 true상태이면 무한반복하면서 기다림
@@ -30,20 +30,20 @@ last_modified_at: 2024-02-17 23:31:32 +0000
 
 ## Algorithm 3
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(8)%20Process%20Synchronization%202%209eef305c46aa40598abe62e1c43149df/Untitled%202.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C8/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-8--Process-Synchronization-2/Untitled%202.png)
 
 - 앞에 설명한 turn과 flag를 전부 사용함
 - 위의 설명된 문제를 전부 해결할 수 있음. 또한 충족 조건 3가지를 전부 충족함
 - **조건을 만족하지 않을경우 while문을 계속 돌게 되는데 아무런 의미 없이(비효율적) 체크했던 조건을 체크하면서 본인의 CPU 할당 시간을 다 쓰게 되는 문제가 있음 (Busy Waiting == spin lock)**
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(8)%20Process%20Synchronization%202%209eef305c46aa40598abe62e1c43149df/Untitled%203.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C8/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-8--Process-Synchronization-2/Untitled%203.png)
 
 - 데이터를 읽고 쓰는것을 하나의 Instruction으로 처리할 수 없기 때문에 위의 문제가 생겼었음 → CPU를 뺏길때는 Instruction 단위로 일어나기 때문에 하나의 Instruction 안에 해결이 된다면 문제 해결이 가능함
 - Lock을 걸고 푸는게 atomic하게 해결됨
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(8)%20Process%20Synchronization%202%209eef305c46aa40598abe62e1c43149df/Untitled%204.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C8/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-8--Process-Synchronization-2/Untitled%204.png)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(8)%20Process%20Synchronization%202%209eef305c46aa40598abe62e1c43149df/Untitled%205.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C8/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-8--Process-Synchronization-2/Untitled%205.png)
 
 - 공유 자원을 획득하고 반납하는 것을 세마포어가 처리를 해줌
 - P연산은 락을 거는 과정(세마포어 변수값을 줄임)이고 V연산은 락을 푸는 과정(세마포어 변수값을 늘림, 원상태로 회복)이다.
@@ -54,9 +54,9 @@ last_modified_at: 2024-02-17 23:31:32 +0000
 - **여기서도 busy waiting 문제는 생김(spin lock)**
 - **위의 예처럼 사용자가 일일히 코딩하는게 아니라 추상 자료형을 제공해주고, 프로그래머는 세마포어를 통해서 프로그래밍을 하면 훨씬 간단하게 작성할 수 있음.**
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(8)%20Process%20Synchronization%202%209eef305c46aa40598abe62e1c43149df/Untitled%206.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C8/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-8--Process-Synchronization-2/Untitled%206.png)
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(8)%20Process%20Synchronization%202%209eef305c46aa40598abe62e1c43149df/Untitled%207.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C8/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-8--Process-Synchronization-2/Untitled%207.png)
 
 - P연산 : 자원에 여분이 없다면 구조체에 프로세스를 연결시키고(add this process to S.L) block 상태로 들어감
 - V연산 : 자원이 끝날때 해당 자원을 기다리면서 잠들어있는 프로세스가 있으면 wakeup해주는 연산이 같이 들어감
@@ -81,7 +81,7 @@ last_modified_at: 2024-02-17 23:31:32 +0000
     - 주로 resource counting에 사용
     
 
-![Untitled](%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC%E1%84%8E%E1%85%A6%E1%84%8C%E1%85%A6(8)%20Process%20Synchronization%202%209eef305c46aa40598abe62e1c43149df/Untitled%208.png)
+![Untitled](/OS/Process%20Management/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C8/assets/images/2024-02-17-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-8--Process-Synchronization-2/Untitled%208.png)
 
 - Deadlock
     - 상대방이 가진것을 기다리면서 자기가 가진것을 내어놓지 않아 상대와 자신이 무한정 기다리는 현상을 Deadlock 이라고함
